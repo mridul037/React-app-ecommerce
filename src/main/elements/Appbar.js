@@ -4,21 +4,20 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
+
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import MenuIcon from "@material-ui/icons/Menu";
-import SearchIcon from "@material-ui/icons/Search";
+
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
-import HomeIcon from '@material-ui/icons/Home';
+
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { Button } from "@material-ui/core";
-import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
-import './Appbar.css';
-import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
+
+import "./Appbar.css";
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -31,10 +30,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
+    display: "block",
   },
   search: {
     position: "relative",
@@ -45,16 +41,16 @@ const useStyles = makeStyles((theme) => ({
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
-    paddingLeft:theme.spacing(10),
+    paddingLeft: theme.spacing(10),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(3),
       width: "auto",
     },
   },
-  button:{
-      display:"flex",
-      flexDirection:"column",
+  button: {
+    display: "flex",
+    flexDirection: "column",
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
@@ -68,6 +64,9 @@ const useStyles = makeStyles((theme) => ({
   inputRoot: {
     color: "inherit",
   },
+  btn: {
+    fontSize: "12px",
+  },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(2em + ${theme.spacing(4)}px)`,
@@ -79,6 +78,7 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionDesktop: {
     display: "none",
+    marginRight: "30px",
     [theme.breakpoints.up("md")]: {
       display: "flex",
     },
@@ -177,75 +177,26 @@ export default function TopMenu() {
     <div className={classes.grow}>
       <AppBar position="static" className={classes.appColor}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Fundmanager.AI
+            My awesome shop
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Ex: Yes Bank, Airtel"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
-          </div>
+
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-  {/* header buttons */}
- <Button >
-   <span className="btn">
-        <HomeIcon  color="primary" className="icon"/>
-        Home
-        </span>
-      </Button>
-      
-      <Button >
-   <span className="btn">
-        <LocalMallOutlinedIcon  color="primary" className="icon"/>
-        Manage Portfolio
-        </span>
-      </Button>
-      <Button >
-   <span className="btn">
-        <HomeIcon  color="primary" className="icon"/>
-        Transactions
-        </span>
-      </Button>
-     <Button aria-label="show 17 new notifications" color="inherit">
-              <span className="btn">
-                <NotificationsIcon color="primary" className="icon"/>
-                Notification
-                </span>
-     </Button>
-     <Button >
-       <span className="btn">
-        <SettingsOutlinedIcon color="primary" className="icon"/>
-        Settings
-        </span>
-      </Button>
+            {/* header buttons */}
+            <Button>
+              <span className={classes.btn}>Home</span>
+            </Button>
 
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+            <Button>
+              <span className={classes.btn}>About</span>
+            </Button>
+            <Button>
+              <span className={classes.btn}>Contact</span>
+            </Button>
+            <Button color="inherit">
+              <span className={classes.btn}>Bag</span>
+            </Button>
           </div>
 
           <div className={classes.sectionMobile}>

@@ -1,19 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SignIn from "./../main/Auth/Login";
-import SignUp from "./../main/Auth/Signup";
-import ForgotPassword from "./../main/Auth/ForgotPassword";
-import Dashboard from "../main/Dashboard/Dashboard";
 
+import Dashboard from "../main/Dashboard/Dashboard";
+import Cart from '../main/Cart/Cart';
 function MainRoutes() {
   return (
     <Router>
       <Switch>
-        <Route path="/signin" component={SignIn} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/forgotpassword" component={ForgotPassword} />
         <Route path="/" exact component={Dashboard} />
-      </Switch>
+        <Route path="/Cart" exact component={Cart} />
+         </Switch>
     </Router>
   );
 }
